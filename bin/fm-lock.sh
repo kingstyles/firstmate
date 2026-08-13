@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Acquire or inspect the per-home firstmate session lock.
-# Writes the harness (agent) process PID found by walking the shell's ancestry,
-# which lives as long as the firstmate session - unlike the transient subshell
-# PID of any one tool call, which is dead moments after it is written.
+# Writes the harness (agent) process PID found by walking the shell's ancestry.
+# Detached tool runners fall back to the single harness whose cwd is this repo.
+# That PID lives as long as the firstmate session, unlike a transient subshell.
 # Usage: fm-lock.sh           acquire; exit 1 if another live session holds it
 #        fm-lock.sh status    print holder and liveness; always exits 0
 set -u
@@ -16,6 +16,52 @@ mkdir -p "$STATE"
 
 # Known harness command names; extend when a new adapter is verified.
 HARNESS_RE='claude|codex|opencode|grok|^pi$'
+PROC_ROOT=${FM_PROC_ROOT:-/proc}
+
+root_harness_pid() {
+  local pid ppid comm args cwd name entrypoint harness candidates=''
+  local -a direct_pids=() interpreted_pids=()
+  local -A direct_names=() direct_parents=() interpreted_names=()
+  while read -r pid ppid comm args; do
+    [ -n "$pid" ] || continue
+    cwd=$(readlink -f "$PROC_ROOT/$pid/cwd" 2>/dev/null) || continue
+    [ "$cwd" = "$FM_ROOT" ] || continue
+    name=$(basename "$comm")
+    case "$name" in
+      claude|codex|opencode|grok|pi)
+        direct_pids+=("$pid")
+        direct_names["$pid"]=$name
+        direct_parents["$pid"]=$ppid
+        ;;
+      node|nodejs|python|python3)
+        read -r _ entrypoint _ <<< "$args"
+        [ -n "${entrypoint:-}" ] || continue
+        harness=$(printf '%s\n' "$entrypoint" | grep -oE '(^|/)(claude|codex|opencode|grok|pi)(\.[^/]*)?($|/)' | head -n 1 | sed -E 's#^/##; s#/.*$##; s/\..*$//')
+        [ -n "$harness" ] || continue
+        interpreted_pids+=("$pid")
+        interpreted_names["$pid"]=$harness
+        ;;
+    esac
+  done < <(ps -eo pid=,ppid=,comm=,args= 2>/dev/null)
+
+  for pid in "${direct_pids[@]}"; do
+    candidates="$candidates${candidates:+ }$pid"
+  done
+  for pid in "${interpreted_pids[@]}"; do
+    local wrapped=0 direct_pid
+    for direct_pid in "${direct_pids[@]}"; do
+      if [ "${direct_parents[$direct_pid]}" = "$pid" ] && [ "${direct_names[$direct_pid]}" = "${interpreted_names[$pid]}" ]; then
+        wrapped=1
+        break
+      fi
+    done
+    [ "$wrapped" -eq 1 ] || candidates="$candidates${candidates:+ }$pid"
+  done
+  # shellcheck disable=SC2086 # Intentional word splitting counts candidate PIDs.
+  set -- $candidates
+  [ "$#" -eq 1 ] || return 1
+  printf '%s\n' "$1"
+}
 
 harness_pid() {
   local pid=$$ comm args
@@ -30,9 +76,11 @@ harness_pid() {
       *node*|*python*) printf '%s' "$args" | grep -qE "$HARNESS_RE" && { echo "$pid"; return 0; } ;;
     esac
     pid=$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')
-    [ -n "$pid" ] && [ "$pid" -gt 1 ] || return 1
+    if [ -z "$pid" ] || [ "$pid" -le 1 ]; then
+      break
+    fi
   done
-  return 1
+  root_harness_pid
 }
 
 holder_alive() {  # true if $1 is a live process that looks like a harness
