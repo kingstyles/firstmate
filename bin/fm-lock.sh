@@ -19,7 +19,7 @@ HARNESS_RE='claude|codex|opencode|grok|^pi$'
 PROC_ROOT=${FM_PROC_ROOT:-/proc}
 
 root_harness_pid() {
-  local pid ppid comm args cwd name command entrypoint harness candidates=''
+  local pid ppid comm args cwd name entrypoint harness candidates=''
   local -a direct_pids=() interpreted_pids=()
   local -A direct_names=() direct_parents=() interpreted_names=()
   while read -r pid ppid comm args; do
@@ -34,7 +34,7 @@ root_harness_pid() {
         direct_parents["$pid"]=$ppid
         ;;
       node|nodejs|python|python3)
-        read -r command entrypoint _ <<< "$args"
+        read -r _ entrypoint _ <<< "$args"
         [ -n "${entrypoint:-}" ] || continue
         harness=$(printf '%s\n' "$entrypoint" | grep -oE '(^|/)(claude|codex|opencode|grok|pi)(\.[^/]*)?($|/)' | head -n 1 | sed -E 's#^/##; s#/.*$##; s/\..*$//')
         [ -n "$harness" ] || continue
