@@ -24,7 +24,7 @@ make_detached_ps() {
   cat > "$fakebin/ps" <<SH
 #!/usr/bin/env bash
 case "\$*" in
-  *"pid=,comm=,args="*) printf '%s\n' '$rows'; exit 0 ;;
+  *"pid=,ppid=,comm=,args="*) printf '%s\n' '$rows'; exit 0 ;;
   *"comm="*) printf '%s\n' bash; exit 0 ;;
   *"args="*) printf '%s\n' 'bash bin/fm-lock.sh'; exit 0 ;;
   *"ppid="*) printf '%s\n' 1; exit 0 ;;
@@ -46,7 +46,7 @@ test_unique_root_harness_acquires_lock() {
   IFS='|' read -r root home proc fakebin <<EOF
 $rec
 EOF
-  make_detached_ps "$fakebin" '42 codex /usr/local/bin/codex'
+  make_detached_ps "$fakebin" '42 1 codex /usr/local/bin/codex'
   add_proc_cwd "$proc" 42 "$root"
 
   out=$(FM_ROOT_OVERRIDE="$root" FM_HOME="$home" FM_PROC_ROOT="$proc" PATH="$fakebin:$PATH" "$LOCK")
@@ -62,7 +62,7 @@ test_direct_harness_beats_interpreter_wrapper() {
   IFS='|' read -r root home proc fakebin <<EOF
 $rec
 EOF
-  make_detached_ps "$fakebin" $'50 node node /opt/codex\n51 codex /opt/vendor/codex'
+  make_detached_ps "$fakebin" $'50 1 node node /opt/codex\n51 50 codex /opt/vendor/codex'
   add_proc_cwd "$proc" 50 "$root"
   add_proc_cwd "$proc" 51 "$root"
 
@@ -78,7 +78,7 @@ test_multiple_root_harnesses_fail_closed() {
   IFS='|' read -r root home proc fakebin <<EOF
 $rec
 EOF
-  make_detached_ps "$fakebin" $'60 codex /opt/codex\n61 codex /opt/codex'
+  make_detached_ps "$fakebin" $'60 1 codex /opt/codex\n61 1 codex /opt/codex'
   add_proc_cwd "$proc" 60 "$root"
   add_proc_cwd "$proc" 61 "$root"
 
@@ -98,7 +98,7 @@ $rec
 EOF
   other="$TMP_ROOT/other-root/project"
   mkdir -p "$other"
-  make_detached_ps "$fakebin" '70 codex /opt/codex'
+  make_detached_ps "$fakebin" '70 1 codex /opt/codex'
   add_proc_cwd "$proc" 70 "$other"
 
   out=$(FM_ROOT_OVERRIDE="$root" FM_HOME="$home" FM_PROC_ROOT="$proc" PATH="$fakebin:$PATH" "$LOCK" 2>&1) || status=$?
@@ -109,7 +109,42 @@ EOF
   pass "fm-lock ignores detached harnesses rooted elsewhere"
 }
 
+test_distinct_direct_and_interpreted_harnesses_fail_closed() {
+  local rec root home proc fakebin out status=0
+  rec=$(make_world mixed)
+  IFS='|' read -r root home proc fakebin <<EOF
+$rec
+EOF
+  make_detached_ps "$fakebin" $'80 1 codex /opt/codex\n81 1 node node /opt/claude/bin/claude.js'
+  add_proc_cwd "$proc" 80 "$root"
+  add_proc_cwd "$proc" 81 "$root"
+
+  out=$(FM_ROOT_OVERRIDE="$root" FM_HOME="$home" FM_PROC_ROOT="$proc" PATH="$fakebin:$PATH" "$LOCK" 2>&1) || status=$?
+
+  expect_code 1 "$status" "distinct direct and interpreted harnesses must fail closed"
+  assert_absent "$home/state/.lock" "mixed harnesses wrote a lock"
+  pass "fm-lock rejects distinct direct and interpreted harnesses"
+}
+
+test_unrelated_interpreter_argument_is_ignored() {
+  local rec root home proc fakebin out status=0
+  rec=$(make_world unrelated)
+  IFS='|' read -r root home proc fakebin <<EOF
+$rec
+EOF
+  make_detached_ps "$fakebin" '90 1 node node /opt/runner.js --model codex'
+  add_proc_cwd "$proc" 90 "$root"
+
+  out=$(FM_ROOT_OVERRIDE="$root" FM_HOME="$home" FM_PROC_ROOT="$proc" PATH="$fakebin:$PATH" "$LOCK" 2>&1) || status=$?
+
+  expect_code 1 "$status" "an unrelated interpreter must not acquire the lock"
+  assert_absent "$home/state/.lock" "unrelated interpreter wrote a lock"
+  pass "fm-lock ignores harness words in interpreter arguments"
+}
+
 test_unique_root_harness_acquires_lock
 test_direct_harness_beats_interpreter_wrapper
 test_multiple_root_harnesses_fail_closed
 test_other_root_harness_is_ignored
+test_distinct_direct_and_interpreted_harnesses_fail_closed
+test_unrelated_interpreter_argument_is_ignored

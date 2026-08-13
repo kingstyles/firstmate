@@ -19,26 +19,44 @@ HARNESS_RE='claude|codex|opencode|grok|^pi$'
 PROC_ROOT=${FM_PROC_ROOT:-/proc}
 
 root_harness_pid() {
-  local pid comm args cwd name direct='' interpreted='' candidates
-  while read -r pid comm args; do
+  local pid ppid comm args cwd name command entrypoint harness candidates=''
+  local -a direct_pids=() interpreted_pids=()
+  local -A direct_names=() direct_parents=() interpreted_names=()
+  while read -r pid ppid comm args; do
     [ -n "$pid" ] || continue
     cwd=$(readlink -f "$PROC_ROOT/$pid/cwd" 2>/dev/null) || continue
     [ "$cwd" = "$FM_ROOT" ] || continue
     name=$(basename "$comm")
     case "$name" in
       claude|codex|opencode|grok|pi)
-        direct="$direct${direct:+ }$pid"
+        direct_pids+=("$pid")
+        direct_names["$pid"]=$name
+        direct_parents["$pid"]=$ppid
         ;;
       node|nodejs|python|python3)
-        if printf '%s' "$args" | grep -qE '(^|[/ ])(claude|codex|opencode|grok|pi)([ /]|$)'; then
-          interpreted="$interpreted${interpreted:+ }$pid"
-        fi
+        read -r command entrypoint _ <<< "$args"
+        [ -n "${entrypoint:-}" ] || continue
+        harness=$(printf '%s\n' "$entrypoint" | grep -oE '(^|/)(claude|codex|opencode|grok|pi)(\.[^/]*)?($|/)' | head -n 1 | sed -E 's#^/##; s#/.*$##; s/\..*$//')
+        [ -n "$harness" ] || continue
+        interpreted_pids+=("$pid")
+        interpreted_names["$pid"]=$harness
         ;;
     esac
-  done < <(ps -eo pid=,comm=,args= 2>/dev/null)
+  done < <(ps -eo pid=,ppid=,comm=,args= 2>/dev/null)
 
-  candidates=$direct
-  [ -n "$candidates" ] || candidates=$interpreted
+  for pid in "${direct_pids[@]}"; do
+    candidates="$candidates${candidates:+ }$pid"
+  done
+  for pid in "${interpreted_pids[@]}"; do
+    local wrapped=0 direct_pid
+    for direct_pid in "${direct_pids[@]}"; do
+      if [ "${direct_parents[$direct_pid]}" = "$pid" ] && [ "${direct_names[$direct_pid]}" = "${interpreted_names[$pid]}" ]; then
+        wrapped=1
+        break
+      fi
+    done
+    [ "$wrapped" -eq 1 ] || candidates="$candidates${candidates:+ }$pid"
+  done
   # shellcheck disable=SC2086 # Intentional word splitting counts candidate PIDs.
   set -- $candidates
   [ "$#" -eq 1 ] || return 1
