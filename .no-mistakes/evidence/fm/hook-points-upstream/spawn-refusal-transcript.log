@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/bin/fm-spawn.sh",
+    "refused-task",
+    "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-spawn-refusal/projects/lab",
+    "--mode",
+    "local-only",
+    "--yolo",
+    "off",
+    "--harness",
+    "claude",
+    "--backend",
+    "tmux"
+  ],
+  "exit": 3,
+  "stdout": "",
+  "stderr": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-spawn-refusal\nexternal module: worker capacity reached\nerror: a pre-spawn hook refused refused-task (reason above); nothing was launched\n",
+  "module_payload": {
+    "task_id": "refused-task",
+    "kind": "ship",
+    "project": "lab",
+    "project_dir": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-spawn-refusal/projects/lab",
+    "brief_file": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-spawn-refusal/data/refused-task/brief.md",
+    "harness": "claude",
+    "model": "",
+    "effort": "",
+    "mode": "local-only",
+    "yolo": "off"
+  },
+  "task_metadata_created": false
+}

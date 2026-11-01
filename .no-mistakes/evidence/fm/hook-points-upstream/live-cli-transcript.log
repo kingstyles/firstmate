@@ -1,0 +1,129 @@
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "NO_TOOL_CALL"}
+{
+  "exit": 0,
+  "stdout": "{\"decision\":\"continue\",\"reason\":\"TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:\\nfinish the owed reply first\"}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "NO_TOOL_CALL"}
+{
+  "exit": 0,
+  "stdout": "{}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "NO_TOOL_CALL"}
+{
+  "exit": 0,
+  "stdout": "{\"decision\":\"continue\",\"reason\":\"TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:\\nfinish the owed reply first\"}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "USER_CANCELED"}
+{
+  "exit": 0,
+  "stdout": "{}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "NO_TOOL_CALL"}
+{
+  "exit": 0,
+  "stdout": "{\"decision\":\"continue\",\"reason\":\"TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:\\nfinish the owed reply first\"}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "ERROR"}
+{
+  "exit": 0,
+  "stdout": "{}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-A", "executionNum": 1, "terminationReason": "NO_TOOL_CALL"}
+{
+  "exit": 0,
+  "stdout": "{\"decision\":\"continue\",\"reason\":\"TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:\\nfinish the owed reply first\"}\n",
+  "stderr": ""
+}
+Antigravity Stop input {"sessionId": "session-B", "executionNum": 1, "terminationReason": "NO_TOOL_CALL"}
+{
+  "exit": 0,
+  "stdout": "{\"decision\":\"continue\",\"reason\":\"TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:\\nfinish the owed reply first\"}\n",
+  "stderr": ""
+}
+Persisted turn-end module payloads
+{"session":"session-A","transcript_path":"","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"}
+
+{"session":"session-A","transcript_path":"","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"}
+
+{"session":"session-A","transcript_path":"","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"}
+
+{"session":"session-A","transcript_path":"","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"}
+
+{"session":"session-B","transcript_path":"","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"}
+
+
+Cursor stop input {"session_id": "cursor-A", "loop_count": 0}
+{
+  "exit": 0,
+  "stdout": "{\n  \"followup_message\": \"\u2063FIRSTMATE_OP: v1 turn-end-guard: TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:\\nfinish the owed reply first\"\n}\n",
+  "stderr": ""
+}
+Cursor stop input {"session_id": "cursor-A", "loop_count": 1}
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}
+Dialog command UserPromptSubmit
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "module_payload": {
+    "session_id": "dialog-A",
+    "prompt_id": null,
+    "prompt": "Exact text\nwith \"quotes\" and := null\n",
+    "harness": "claude",
+    "home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"
+  }
+}
+Dialog command Stop
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "module_payload": {
+    "session_id": "dialog-A",
+    "prompt_id": null,
+    "last_assistant_message": "Exact text\nwith \"quotes\" and := null\n",
+    "stop_hook_active": false,
+    "transcript_path": null,
+    "harness": "claude",
+    "home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AKTC8RC41CSCCVA0619230/.test-live"
+  }
+}
+Linked worker dialog boundary
+{
+  "exit": 0,
+  "stdout": "",
+  "primary_module_unchanged": true
+}
+Concurrent replacement while old hooks drain
+{
+  "exit": 0,
+  "output": "watcher: already running pid 1351330\n"
+}
+Real watcher handoff module trace
+[
+  "watch-tick start 1352720",
+  "heartbeat start 1358891",
+  "watch-tick end 1352720",
+  "heartbeat end 1358891",
+  "watch-tick start 1374814",
+  "watch-tick end 1374814"
+]
+Watcher exits
+{
+  "first": -15,
+  "second": 0,
+  "no_overlapping_modules": true,
+  "all_module_runs_completed": true
+}
+RESULT
+All direct public-interface checks passed; native harness launch was not simulated.

@@ -1,0 +1,13 @@
+{
+  "PATH_tools": {
+    "agy": null,
+    "cursor-agent": null,
+    "claude": "/home/kingstyle/.local/bin/claude",
+    "tmux": "/usr/bin/tmux"
+  },
+  "native_limits": {
+    "worker_launch": "The Claude spawn route registers workspace trust in the user-level store; changing that store is outside this run workspace boundary. An empty isolated configuration would not supply the existing login. No production credential files were read or copied.",
+    "primary_dialog": "The mandated native primary launch runs from this gate worktree. The real dialog command was driven there and correctly excluded it as a linked worker checkout. Automatic delivery requires an authorized pre-trusted plain primary fixture launch route.",
+    "Cursor_Antigravity": "Native CLIs are absent on PATH; public stop adapters were driven directly with protocol payloads. A signed-in native harness fixture is needed for automatic-delivery proof."
+  }
+}
