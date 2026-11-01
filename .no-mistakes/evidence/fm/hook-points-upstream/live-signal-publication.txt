@@ -1,0 +1,4 @@
+watch-tick: TERM during blocked marker publication was deferred; full marker=792199 linux-starttime=187660579 cmdline-hex=626173680062696e2f666d2d77617463682e736800; exit after 0.214s
+watch-tick: successor respected complete identity marker; no overlap and stop did not await hook
+heartbeat: TERM during blocked marker publication was deferred; full marker=814615 linux-starttime=187661235 cmdline-hex=626173680062696e2f666d2d77617463682e736800; exit after 0.214s
+heartbeat: successor respected complete identity marker; no overlap and stop did not await hook

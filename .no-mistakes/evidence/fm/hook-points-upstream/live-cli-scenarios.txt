@@ -1,0 +1,303 @@
+$ bash bin/fm-hooks.sh run session-start
+exit=0
+
+
+$ bash bin/fm-hooks.sh run intake
+exit=0
+
+
+$ bash bin/fm-hooks.sh run pre-spawn
+exit=0
+
+
+$ bash bin/fm-hooks.sh run post-spawn
+exit=0
+
+
+$ bash bin/fm-hooks.sh run watch-tick
+exit=0
+
+
+$ bash bin/fm-hooks.sh run heartbeat
+exit=0
+
+
+$ bash bin/fm-hooks.sh run turn-end
+exit=0
+
+
+$ bash bin/fm-hooks.sh run pre-merge
+exit=0
+
+
+$ bash bin/fm-hooks.sh run post-merge
+exit=0
+
+
+$ bash bin/fm-hooks.sh run teardown
+exit=0
+
+
+$ bash bin/fm-hooks.sh run prompt-submit
+exit=0
+
+
+$ bash bin/fm-hooks.sh run stop
+exit=0
+
+
+Installed external module received these public CLI event payloads:
+[
+  {
+    "scenario": "public-cli",
+    "event": "session-start",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "intake",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "pre-spawn",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "post-spawn",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "watch-tick",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "heartbeat",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "turn-end",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "pre-merge",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "post-merge",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "teardown",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "prompt-submit",
+    "path": "/srv/app:=null"
+  },
+  {
+    "scenario": "public-cli",
+    "event": "stop",
+    "path": "/srv/app:=null"
+  }
+]
+
+$ bash bin/fm-pr-merge.sh freeze https://github.com/example/disposable/pull/1
+exit=3
+temporary release freeze
+error: PR merge refused by a pre-merge hook (reason above); nothing was merged or recorded
+
+
+Refused merge left its task record byte-for-byte unchanged. No merge was attempted.
+
+$ bash -c . bin/fm-wake-lib.sh; fm_wake_append check inbox:note1 "check: captain inbox note note1 - Review disposable hook validation"
+exit=0
+
+
+$ bash bin/fm-wake-drain.sh
+exit=0
+1793509154	1	check	inbox:note1	check: captain inbox note note1 - Review disposable hook validation
+INTAKE inbox:note1: {"route":"validation"}
+WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 874318.1793509154.PNKNmR
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  After draining queued wakes, repair missing watcher supervision with a foreground checkpoint: bin/fm-watch-checkpoint.sh --seconds 180.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WARNING: queued wakes pending - drain them with bin/fm-wake-drain.sh before anything else.
+
+
+Presented intake payload: {"item_key":"inbox:note1","surface":"inbox","place":"captain-inbox","text_file":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home/state/inbox/note1.note"}
+
+
+$ bash bin/fm-session-start.sh --reemit --source live-cli
+exit=0
+RE-EMIT CUE: if this output ends with "Output too large ... Full output saved to <path>",
+read that whole file now, before acting. Otherwise read data/captain.md, data/captain-shared.md,
+and data/learnings.md under /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home/data now if any of them is missing below.
+
+================================================================================
+SESSION START (CONTEXT RE-EMIT) - /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home
+================================================================================
+This session already took the helm at its own startup and has only lost its
+context. Lock ownership is re-verified and the durable records below are
+reprinted, but the sweeps startup already reconciled - project clone refresh,
+secondmate convergence and liveness, pending remote handoff
+retry, X-mode artifact writes, and stale Herdr child cleanup - are NOT repeated.
+Queued wakes ARE still drained: they arrived after startup and are this turn work.
+
+LOCK
+--------------------------------------------------------------------------------
+lock acquired: harness pid 290916
+
+HOME ROLE
+--------------------------------------------------------------------------------
+fm-role: user (default)
+
+BOOTSTRAP
+--------------------------------------------------------------------------------
+(silent - all good)
+
+WAKE QUEUE
+--------------------------------------------------------------------------------
+1793509154	1	check	inbox:note1	check: captain inbox note note1 - Review disposable hook validation
+WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 874318.1793509154.PNKNmR
+INTAKE inbox:note1: {"route":"validation"}
+WARNING: watcher still down (same stale episode; last beat: never, grace 300s) - full banner already printed this episode.
+WARNING: queued wakes pending - drain them with bin/fm-wake-drain.sh before anything else.
+================================================================================
+SUPERVISION OPERATING INSTRUCTIONS - primary harness: codex
+================================================================================
+Current state:
+- Lock: held by this session; this session owns normal supervision unless away mode says otherwise.
+- Away/quiet mode: inactive.
+- X mode: inactive; use the default watcher cadence.
+- Ordinary wake: take the next foreground bin/fm-watch-checkpoint.sh checkpoint as directed below.
+
+Mode: Codex foreground checkpoint.
+
+When this session owns supervision and away mode is not active:
+1. Drain first with `bin/fm-wake-drain.sh`.
+   After handling all emitted wakes and reconciling open decisions and unread status lines, run the exact `--ack-through` command printed as `WAKE_ACK_REQUIRED`; until then the work remains durable for idempotent re-handling after interruption.
+2. Source `/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home/config/x-mode.env` first when Relay is active.
+3. First cycle: run one foreground watcher checkpoint with `bin/fm-watch-checkpoint.sh --seconds "${FM_CODEX_WATCH_CHECKPOINT:-180}"`.
+4. Ordinary wake: if the command prints `signal:`, `stale:`, `check:`, or `heartbeat`, drain queued wakes, handle that wake, then start the next checkpoint.
+5. If the command prints `checkpoint:` or exits 124 with no wake, drain queued wakes anyway, process any queued user message now visible to Codex, then start the next checkpoint.
+6. Never use shell `&` or Codex background tasks for firstmate watcher supervision.
+7. Do not run `bin/fm-watch-arm.sh` as Codex's normal supervision command.
+   If it is ever shelled anyway, a backgrounded, piped, or bundled anti-pattern is denied automatically by the PreToolUse seatbelt (`bin/fm-arm-pretool-check.sh`) registered in `.codex/hooks.json`.
+8. Failure or missing cycle only: drain queued wakes, inspect the failure, then start a fresh foreground checkpoint.
+
+Codex cannot reason while a foreground tool call is running.
+The bounded checkpoint returns control regularly so user messages and queued wakes can be handled without relying on background-task wake semantics.
+
+
+================================================================================
+READ-ONCE CONTRACT
+================================================================================
+Everything below is printed in full for this session start: every state/*.meta,
+a compact data/backlog.md listing, a bounded tail of every state/*.status,
+data/projects.md, data/secondmates.md, data/captain.md, data/captain-shared.md,
+and data/learnings.md.
+Do NOT re-read any of them after reading this digest, and do NOT bulk-read
+data/backlog.md or state/*.status: re-reading everything defeats the entire
+point of this command.
+
+Go to a source directly only when:
+  - this digest flagged it ABSENT (then rebuild or create it per AGENTS.md),
+  - its contents looked unparseable or corrupt,
+  - an individual full status log is needed for older wake-event history, or a
+    status line was capped and its tail matters (each task's full log path is
+    printed with its tail),
+  - a full task body is needed (bin/fm-tasks-axi.sh show <id> --full, or data/backlog.md),
+  - the backlog listing disclosed omitted queued items and this turn needs them,
+  - the NETWORK CHECKS section reported its checks still IN PROGRESS and this
+    turn needs their verdict (bin/fm-startup-network.sh report),
+  - or a STARTUP TRUNCATED banner named the stage that would have printed it, in
+    which case that stage's sources were never emitted and must be reconciled,
+  - or a context re-emit opened with a read cue because the
+    harness cut the digest short.
+
+================================================================================
+FLEET STATE
+================================================================================
+
+data/backlog.md
+--------------------------------------------------------------------------------
+ABSENT
+
+Work under way (state/*.meta)
+--------------------------------------------------------------------------------
+
+--- freeze ---
+window=fm-lab:freeze
+project=disposable
+worktree=/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home/unused
+endpoint: dead (backend=tmux window=fm-lab:freeze)
+status tail: (no status file yet: /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home/state/freeze.status)
+
+Orphan status logs (state/*.status without matching .meta)
+--------------------------------------------------------------------------------
+(none)
+
+AFK
+--------------------------------------------------------------------------------
+absent
+
+================================================================================
+NETWORK CHECKS
+================================================================================
+completed off the startup path in 1s: GitHub authentication.
+(silent - no problems found)
+
+================================================================================
+CONTEXT
+================================================================================
+
+data/projects.md
+--------------------------------------------------------------------------------
+ABSENT
+
+data/secondmates.md
+--------------------------------------------------------------------------------
+ABSENT
+
+data/captain.md
+--------------------------------------------------------------------------------
+ABSENT
+
+data/captain-shared.md (shared, main-authoritative, read-only in secondmate homes)
+--------------------------------------------------------------------------------
+ABSENT
+
+data/learnings.md
+--------------------------------------------------------------------------------
+ABSENT
+
+================================================================================
+NEXT STEP
+================================================================================
+Follow the supervision operating instructions block above for harness 'codex'.
+This script never starts supervision itself.
+
+
+================================================================================
+ADD-ON HOOKS (session-start)
+================================================================================
+DISPOSABLE ADD-ON READY
+
+The digest above is complete for this session start. The READ-ONCE CONTRACT
+section near the top of it governs what may still be read from disk.
+
+
+Startup hook payload: {"home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/cli-home","harness":"codex","source":"live-cli","read_only":false,"reemit":true}

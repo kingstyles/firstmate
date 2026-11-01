@@ -1,0 +1,15 @@
+Live product checks used marked disposable FM_HOME directories entirely inside the gate worktree.
+Monitoring used the real fm-watch.sh and tmux backend against an empty isolated fleet.
+The publication-window check delayed the real od read, then delegated to /usr/bin/od without changing its output.
+An initial FIFO approach blocked the earlier idle check, so it was discarded and replaced by the real-read delay.
+A relative private fm-lab socket resolved the initial tmux Unix socket path-length error.
+Native Claude then reached workspace trust; no trust choice or credentials were changed.
+Cursor Agent and Antigravity CLIs were absent from PATH, and no repository-local executable was supplied.
+Cursor and Antigravity portable regression checks use simulated vendor processes and are not live native evidence.
+Immediate and queued remote merge completion was covered by portable regressions, not by a real forge merge.
+The real pre-merge refusal stopped before a forge request.
+No linters, formatters, broad repository suite, pipeline-control, publication, or CI commands were run.
+All disposable manual fixtures and temporary test runners were removed.
+Focused baseline commands completed with exit 0: bash tests/fm-hooks.test.sh; bash tests/fm-pr-merge.test.sh.
+Selected behavioral regressions completed with exit 0: watcher handoff and PID reuse; Cursor normal-stop and refusal ownership; Antigravity normal-stop, session-scoped hold, and refusal supersession.
+Live CLI and watcher driver runs completed with exit 0 after the documented setup corrections.

@@ -1,0 +1,9 @@
+watch-tick payload: {"home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/home","cycle":1,"watcher_pid":484530}
+watch-tick identity marker: 485211 linux-starttime=187647925 cmdline-hex=626173680062696e2f666d2d77617463682e736800
+heartbeat payload: {"home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/home"}
+heartbeat identity marker: 485833 linux-starttime=187647947 cmdline-hex=626173680062696e2f666d2d77617463682e736800
+first watcher stopped after 0.063s while both seven-second hooks still ran
+successor suppressed both in-flight hooks across handoff
+both events ran despite stale markers naming this live driver PID with a different identity
+watch-tick final trace: ["start", "done"]
+heartbeat final trace: ["start", "done"]

@@ -1,0 +1,1 @@
+error connecting to /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/native-home/tmux/tmux-1000/fm-lab (File name too long)

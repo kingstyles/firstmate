@@ -1,0 +1,18 @@
+ok - no hooks: every event is silent, exits 0, and leaves stdin unread
+ok - fm_hooks_emit costs one directory test and starts nothing when no folder exists
+ok - payload fields are escaped into valid JSON, raw literals pass through
+ok - hooks run home folder first, then the extra folder, in byte order with payload, FM_HOME, and args
+ok - pre-spawn, turn-end, and pre-merge refuse at the first failing hook with its reason
+ok - a blocking hook that times out refuses within its bound
+ok - a failing or slow hook of a non-blocking event is logged, times out, and the rest still run
+ok - session-start stdout passes through and intake output merges, failing hooks included
+ok - pre-spawn output merges recursively, keeps the first value, and reports or refuses conflicts
+ok - FM_HOOK_MIRROR records one digest-only line per run that ran a hook
+ok - prompt-submit and stop: every run mirrored, digests only unless FM_HOOK_MIRROR_TEXT=1, text capped
+ok - the tracked Claude registrations hand prompt and stop to their hooks without printing or blocking
+ok - the dialog call point ignores Cursor payloads, other events, and non-primary checkouts
+ok - an unknown or missing event is a usage error
+ok - the wake drain offers presented inbox notes to intake hooks and appends their lines
+ok - a refusing pre-merge hook stops the merge before the forge or any record is touched
+ok - post-merge fires once per recorded merge, for a polled (queued) merge and a self merge
+fm-hooks: all tests passed

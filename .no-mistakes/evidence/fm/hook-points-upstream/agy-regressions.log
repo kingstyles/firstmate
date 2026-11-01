@@ -1,0 +1,3 @@
+ok - fm-turnend-guard-agy: turn-end hooks run on a normal stop, a refusal continues the turn once
+ok - fm-turnend-guard-agy: a hook hold skip is retired by a cancelled stop and bound to its session
+ok - fm-turnend-guard-agy: a hook refusal claims the park so an older park stands down

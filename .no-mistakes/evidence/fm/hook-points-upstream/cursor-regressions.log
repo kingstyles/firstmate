@@ -1,0 +1,2 @@
+ok - cursor park: turn-end hooks run on a normal stop and hold it at most once
+ok - cursor park: a turn-end hook refusal claims the park first, superseding an older park

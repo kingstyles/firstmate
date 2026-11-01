@@ -1,0 +1,3 @@
+ok - disposable watcher refuses inherited state outside its marked lab
+ok - watcher hook runs never overlap a handoff, and a stop never waits on one
+ok - watcher hook markers are bound to the run's process identity, not a reused pid

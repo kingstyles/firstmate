@@ -1,0 +1,5 @@
+claude: /home/kingstyle/.local/bin/claude
+cursor-agent: absent from PATH
+agy: absent from PATH
+tmux: /usr/bin/tmux
+treehouse: /home/kingstyle/.local/bin/treehouse

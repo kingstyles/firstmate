@@ -1,0 +1,16 @@
+$ git init -q -b main /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/spawn-home/projects/disposable
+exit=0
+
+
+$ git -C /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/spawn-home/projects/disposable -c user.name=Validation -c user.email=validation@example.invalid commit --allow-empty -qm fixture
+exit=0
+
+
+$ bash bin/fm-spawn.sh admission /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/spawn-home/projects/disposable --mode local-only --yolo off --harness claude
+exit=3
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/spawn-home
+disposable capacity reached
+error: a pre-spawn hook refused admission (reason above); nothing was launched
+
+
+Admission refused with no task record; payload: {"task_id":"admission","kind":"ship","project":"disposable","project_dir":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/spawn-home/projects/disposable","brief_file":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6ANWTAFP19Q340YCRKM7S8P/.gate-live/spawn-home/data/admission/brief.md","harness":"claude","model":"","effort":"","mode":"local-only","yolo":"off"}
