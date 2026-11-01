@@ -1,0 +1,39 @@
+$ [ -z "${GROK_AGENT:-}${GROK_HOOK_EVENT:-}" ] || exit 0; exec "$CLAUDE_PROJECT_DIR"/bin/fm-dialog-hooks.sh claude
+input: {"hook_event_name": "UserPromptSubmit", "session_id": "live-boundary-session", "prompt_id": "p1", "prompt": "literal :=null\nquoted \" text\n\n", "last_assistant_message": "Completed lab verification.", "stop_hook_active": false}
+stdout: 
+stderr: 
+exit=0
+$ [ -z "${GROK_AGENT:-}${GROK_HOOK_EVENT:-}" ] || exit 0; exec "$CLAUDE_PROJECT_DIR"/bin/fm-dialog-hooks.sh claude
+input: {"hook_event_name": "Stop", "session_id": "live-boundary-session", "prompt_id": "p1", "prompt": "literal :=null\nquoted \" text\n\n", "last_assistant_message": "Completed lab verification.", "stop_hook_active": false}
+stdout: 
+stderr: 
+exit=0
+$ [ -z "${GROK_AGENT:-}${GROK_HOOK_EVENT:-}" ] || exit 0; exec "$CLAUDE_PROJECT_DIR"/bin/fm-dialog-hooks.sh claude
+input: {"hook_event_name": "UserPromptSubmit", "prompt": "ignored"}
+stdout: 
+stderr: 
+exit=0
+$ [ -z "${GROK_AGENT:-}${GROK_HOOK_EVENT:-}" ] || exit 0; exec "$CLAUDE_PROJECT_DIR"/bin/fm-dialog-hooks.sh claude
+input: {"hook_event_name": "UserPromptSubmit", "cursor_version": "1.7", "prompt": "ignored"}
+stdout: 
+stderr: 
+exit=0
+$ [ -z "${GROK_AGENT:-}${GROK_HOOK_EVENT:-}" ] || exit 0; exec "$CLAUDE_PROJECT_DIR"/bin/fm-dialog-hooks.sh claude
+input: {"hook_event_name": "SessionStart", "prompt": "ignored"}
+stdout: 
+stderr: 
+exit=0
+$ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.nuceq2wm/primary/bin/fm-turnend-guard.sh --claude
+input: {"session_id": "live-turn", "transcript_path": "/lab/transcript.jsonl", "stop_hook_active": false}
+stdout: 
+stderr: TURN END HELD BY A LIFECYCLE HOOK - handle this before ending the turn:
+lab-turn-obligation
+
+exit=2
+$ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.nuceq2wm/primary/bin/fm-turnend-guard.sh --claude
+input: {"session_id": "live-turn", "stop_hook_active": true}
+stdout: 
+stderr: 
+exit=0
+Registered command boundary assertions passed; payloads were supplied through stdin, not by a real Claude turn.
+Disposable source snapshot and home removed.

@@ -1,0 +1,2 @@
+# fm-session-start.test.sh: all assertions passed
+ok - session-start hook output is appended to the digest after the closing reminder

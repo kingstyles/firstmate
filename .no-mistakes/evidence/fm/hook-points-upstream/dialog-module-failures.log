@@ -1,0 +1,2 @@
+fm-hooks: prompt-submit: 10-capture exited 7 (ignored): test-module-failure
+fm-hooks: stop: 10-capture exited 7 (ignored): test-module-failure

@@ -1,0 +1,36 @@
+{"event":"session-start","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"intake","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"pre-spawn","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"post-spawn","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"watch-tick","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"heartbeat","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"turn-end","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"pre-merge","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"post-merge","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"teardown","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"prompt-submit","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"stop","hook":"10-record","payload":{"task_id":"lab-task","project_dir":"/srv/app:=null","text":"quote \" newline\nend","cycle":7,"forced":false}}
+{"event":"post-spawn","hook":"10-record","payload":{"project_dir":"/srv/app:=null","count":3,"ready":true}}
+{"event":"pre-spawn","hook":"10-record","payload":{}}
+{"event":"turn-end","hook":"10-record","payload":{}}
+{"event":"pre-merge","hook":"10-record","payload":{}}
+{"event":"post-spawn","hook":"10-record","payload":{}}
+{"event":"post-spawn","hook":"30-after","payload":{}}
+{"event":"post-merge","hook":"10-record","payload":{}}
+{"event":"post-merge","hook":"30-after","payload":{}}
+{"event":"teardown","hook":"10-record","payload":{}}
+{"event":"teardown","hook":"30-after","payload":{}}
+{"event":"watch-tick","hook":"10-record","payload":{}}
+{"event":"watch-tick","hook":"30-after","payload":{}}
+{"event":"heartbeat","hook":"10-record","payload":{}}
+{"event":"heartbeat","hook":"30-after","payload":{}}
+{"event":"intake","hook":"10-record","payload":{"item_key":"inbox:1793502494-PQVlYj","surface":"inbox","place":"captain-inbox","text_file":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/state/inbox/1793502494-PQVlYj.note"}}
+{"event":"post-merge","hook":"10-record","payload":{"task_id":"queued","pr_url":"https://github.com/example/repo/pull/8","sha":"","provider":"github"}}
+{"event":"post-merge","hook":"10-record","payload":{"task_id":"immediate","pr_url":"https://github.com/example/repo/pull/9","sha":"","provider":"github"}}
+{"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 1, "watcher_pid": 2014065}}
+{"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 2, "watcher_pid": 2014065}}
+{"event": "heartbeat", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home"}}
+{"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 3, "watcher_pid": 2014065}}
+{"event": "heartbeat", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home"}}
+{"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 4, "watcher_pid": 2014065}}
+{"event": "heartbeat", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home"}}

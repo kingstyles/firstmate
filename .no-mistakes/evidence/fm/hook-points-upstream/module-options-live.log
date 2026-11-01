@@ -1,0 +1,13 @@
+event=pre-spawn
+stdout={"route":{"team":"finance","queue":"lab"},"accepted":true}
+stderr=fm-hooks: pre-spawn: conflict on route.team: kept 10-first, ignored 20-second
+exit=0
+event=pre-spawn
+stdout=stderr=pre-spawn: conflict on route.team: kept 10-first, ignored 20-second
+exit=3
+event=prompt-submit
+stdout=stderr=exit=0
+event=stop
+stdout=stderr=exit=0
+Lexical/home-first order, extra-directory merge, conflict refusal and dialog mirror privacy/capping assertions passed.
+Disposable module installation removed.

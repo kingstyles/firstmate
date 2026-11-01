@@ -1,0 +1,6 @@
+/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.U3nphM
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.U3nphM
+lab launch refused by module
+error: a pre-spawn hook refused refuse (reason above); nothing was launched
+spawn exit=3
+{"task_id":"refuse","kind":"ship","project":"demo","project_dir":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.U3nphM/projects/demo","brief_file":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.U3nphM/data/refuse/brief.md","harness":"claude","model":"","effort":"","mode":"local-only","yolo":"off"}

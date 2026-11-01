@@ -1,0 +1,3 @@
+{"event":"prompt-submit","payload":{"session_id":"live-boundary-session","prompt_id":"p1","prompt":"literal :=null\nquoted \" text\n\n","harness":"claude","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.nuceq2wm"}}
+{"event":"stop","payload":{"session_id":"live-boundary-session","prompt_id":"p1","last_assistant_message":"Completed lab verification.","stop_hook_active":false,"transcript_path":null,"harness":"claude","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.nuceq2wm"}}
+{"event":"turn-end","payload":{"session":"live-turn","transcript_path":"/lab/transcript.jsonl","home":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.nuceq2wm"}}

@@ -1,0 +1,221 @@
+$ bin/fm-lab-home.sh create /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv
+/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh session-start
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh intake
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh pre-spawn
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh post-spawn
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh watch-tick
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh heartbeat
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh turn-end
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh pre-merge
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh post-merge
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh teardown
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh prompt-submit
+stdin: untouched
+
+untouched
+
+exit=0
+$ bash -c '"$1" run "$2"; cat' _ /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/bin/fm-hooks.sh stop
+stdin: untouched
+
+untouched
+
+exit=0
+$ bin/fm-hooks.sh run session-start
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+addon session context
+
+exit=0
+$ bin/fm-hooks.sh run intake
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+{"route":{"team":"operations"}}
+
+exit=0
+$ bin/fm-hooks.sh run pre-spawn
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+{"route":{"team":"operations"}}
+
+exit=0
+$ bin/fm-hooks.sh run post-spawn
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run watch-tick
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run heartbeat
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run turn-end
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run pre-merge
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run post-merge
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run teardown
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run prompt-submit
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bin/fm-hooks.sh run stop
+stdin: {"task_id": "lab-task", "project_dir": "/srv/app:=null", "text": "quote \" newline\nend", "cycle": 7, "forced": false}
+
+exit=0
+$ bash -c '. bin/fm-hooks-lib.sh; fm_hooks_emit post-spawn project_dir=/srv/app:=null count:=3 ready:=true'
+
+exit=0
+$ bin/fm-hooks.sh run pre-spawn
+stdin: {}
+lab-policy-refusal
+
+exit=3
+$ bin/fm-hooks.sh run turn-end
+stdin: {}
+lab-policy-refusal
+
+exit=3
+$ bin/fm-hooks.sh run pre-merge
+stdin: {}
+lab-policy-refusal
+
+exit=3
+$ bin/fm-hooks.sh run post-spawn
+stdin: {}
+fm-hooks: post-spawn: 20-refuse exited 9 (ignored): lab-policy-refusal
+
+exit=0
+$ bin/fm-hooks.sh run post-merge
+stdin: {}
+fm-hooks: post-merge: 20-refuse exited 9 (ignored): lab-policy-refusal
+
+exit=0
+$ bin/fm-hooks.sh run teardown
+stdin: {}
+fm-hooks: teardown: 20-refuse exited 9 (ignored): lab-policy-refusal
+
+exit=0
+$ bin/fm-hooks.sh run watch-tick
+stdin: {}
+fm-hooks: watch-tick: 20-refuse exited 9 (ignored): lab-policy-refusal
+
+exit=0
+$ bin/fm-hooks.sh run heartbeat
+stdin: {}
+fm-hooks: heartbeat: 20-refuse exited 9 (ignored): lab-policy-refusal
+
+exit=0
+$ bin/fm-hooks.sh run pre-merge
+stdin: {}
+05-slow timed out after 10s
+
+exit=3
+Observed zero-valued timeout duration: 10.02s
+$ bin/fm-inbox.sh note --request-id hook-lab-intake --json 'Route the lab maintenance idea'
+{"schema":"fm-inbox-note.v1","outcome":"created","id":"1793502494-PQVlYj","request_id":"hook-lab-intake","saved":true,"announced":true,"acknowledged":false,"path":"/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/state/inbox/1793502494-PQVlYj.note"}
+
+exit=0
+$ bin/fm-wake-drain.sh
+1793502494	1	check	inbox:1793502494-PQVlYj	check: captain inbox note 1793502494-PQVlYj - Route the lab maintenance idea
+INTAKE inbox:1793502494-PQVlYj: {"route":{"team":"operations"}}
+WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 2004901.1793502494.ChPxol
+
+exit=0
+$ bin/fm-pr-merge.sh lab-merge https://github.com/example/repo/pull/7
+lab-release-freeze
+error: PR merge refused by a pre-merge hook (reason above); nothing was merged or recorded
+
+exit=3
+$ bash -c '. bin/fm-merge-outcome-lib.sh
+fm_merge_outcome_report "$FM_HOME" "$FM_HOME/state" queued https://github.com/example/repo/pull/8 poll || exit
+fm_merge_outcome_report "$FM_HOME" "$FM_HOME/state" queued https://github.com/example/repo/pull/8 poll || exit
+fm_merge_outcome_report "$FM_HOME" "$FM_HOME/state" immediate https://github.com/example/repo/pull/9 self || exit
+fm_merge_outcome_report "$FM_HOME" "$FM_HOME/state" immediate https://github.com/example/repo/pull/9 poll || exit
+cat "$FM_HOME/state/queued.pr-poll-merge-notified" "$FM_HOME/state/immediate.pr-poll-merge-notified"
+'
+fm-pr-poll-merge-notified-v1
+github
+github.com
+example/repo
+8
+fm-pr-poll-merge-notified-v1
+github
+github.com
+example/repo
+9
+
+exit=0
+$ bin/fm-lab-home.sh create /home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home
+/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home
+
+exit=0
+$ FM_POLL=1 FM_HEARTBEAT=1 bin/fm-watch.sh
+
+exit=-15
+Actual watcher tick events: [{"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 1, "watcher_pid": 2014065}}, {"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 2, "watcher_pid": 2014065}}, {"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 3, "watcher_pid": 2014065}}, {"event": "watch-tick", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home", "cycle": 4, "watcher_pid": 2014065}}]
+Actual heartbeat events: [{"event": "heartbeat", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home"}}, {"event": "heartbeat", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home"}}, {"event": "heartbeat", "hook": "10-record", "payload": {"home": "/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/fm-lab.n3fpw6dv/watch-home"}}]
+All manual assertions passed.
+Disposable lab removed.

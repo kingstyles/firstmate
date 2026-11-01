@@ -1,0 +1,4 @@
+# all fm-spawn-dispatch-profile tests passed
+ok - a refusing pre-spawn hook stops the spawn with its reason before any record or launch
+ok - pre-spawn output never changes the launch, and post-spawn sees the verified start
+ok - an empty pre-spawn folder leaves the spawn unchanged

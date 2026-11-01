@@ -1,0 +1,41 @@
+/home/kingstyle/.no-mistakes/worktrees/0baeb7d2a3d6/01M6AFV2JT51JFYKCMSN0A2E6E/lp5X
+hecks — only Edit(path) rules are. Use Edit(/home/kingstyle/**) instead (Edit rules cover all file-editing tools).
+Permission allow rule (../../../../.claude/settings.json): Write(/tmp/**) is not matched by file permission checks — onl
+y Edit(path) rules are. Use Edit(/tmp/**) instead (Edit rules cover all file-editing tools).
+HOOK_LAB_ACK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pane is dead (status 0, Sun Nov  1 10:10:52 2026)
